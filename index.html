@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs of the Faithful Servant | Camp Nelson National Cemetery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta name="description" content="A hymnal of original compositions honoring the men and women interred at Camp Nelson National Cemetery, Nicholasville, Kentucky.">
+</head>
+<body class="dark-theme">
+
+    <!-- Floating Particles Background -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <header class="glass-header" id="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="site-brand">
+                <span class="brand-icon">&#9734;</span>
+                <span class="site-title">Songs of the Faithful Servant</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="modern-nav" id="main-nav">
+                <a href="#hero">Home</a>
+                <a href="#dedication" class="active">Dedication</a>
+                <a href="songs.html">The Hymns</a>
+                <a href="tribute.html">Director's Tribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-image" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <h1 class="hero-title animate-on-scroll">Songs of the<br>Faithful Servant</h1>
+            <p class="hero-subtitle animate-on-scroll">A Hymnal of Veterans' Sacrifice &amp; Service</p>
+            <div class="hero-divider"></div>
+            <p class="hero-location animate-on-scroll">Dedicated with Gratitude and Honor to<br>
+            <strong>Camp Nelson National Cemetery</strong><br>
+            Nicholasville, Kentucky</p>
+            <p class="hero-era animate-on-scroll">In Memory of All Who Served<br>From the Civil War to the Present Day</p>
+            <a href="songs.html" class="hero-cta animate-on-scroll">
+                <span>Enter the Hymnal</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Dedication Section -->
+    <section class="dedication-section" id="dedication">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Dedication</span>
+                <h2>To Those Who Gave Everything</h2>
+            </div>
+
+            <div class="dedication-content">
+                <div class="dedication-block animate-on-scroll">
+                    <p class="dedication-line"><span class="dedication-accent">To</span> every soldier who stood in the gap between freedom and its enemies,</p>
+                </div>
+
+                <div class="dedication-block animate-on-scroll">
+                    <p class="dedication-line"><span class="dedication-accent">To</span> every man and woman who laid aside the comforts of home and walked into the long uncertain dark of war,</p>
+                </div>
+
+                <div class="dedication-block animate-on-scroll">
+                    <p class="dedication-line"><span class="dedication-accent">To</span> the United States Colored Troops who mustered at Camp Nelson, who came in chains and left as soldiers, who proved by their blood and by their valor that freedom is not given &mdash; it is purchased,</p>
+                </div>
+
+                <div class="dedication-block animate-on-scroll">
+                    <p class="dedication-line"><span class="dedication-accent">To</span> those who rest in Kentucky's earth at this hallowed ground, known and unknown, remembered and forgotten by name but not forgotten by God,</p>
+                </div>
+
+                <div class="dedication-closing animate-on-scroll">
+                    <p class="dedication-offer">These songs are offered.</p>
+                </div>
+            </div>
+
+            <div class="dedication-prayer animate-on-scroll">
+                <p>May they rise like incense from this green and storied ground.</p>
+                <p>May they carry your names into the hearing of every generation.</p>
+                <p>May they remind us, the living, that we are caretakers of a freedom we did not earn.</p>
+            </div>
+
+            <blockquote class="scripture-quote animate-on-scroll">
+                <p>&ldquo;Greater love hath no man than this, that a man lay down his life for his friends.&rdquo;</p>
+                <cite>&mdash; John 15:13</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Hymn List Preview -->
+    <section class="hymn-preview-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">The Collection</span>
+                <h2>15 Original Hymns</h2>
+                <p class="section-description">Each composition written in honor of the men and women interred at Camp Nelson</p>
+            </div>
+
+            <div class="hymn-list-grid">
+                <a href="songs/song-01.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">01</span>
+                    <span class="hymn-name">Upon This Sacred Ground</span>
+                    <span class="hymn-style">Southern Gospel</span>
+                </a>
+                <a href="songs/song-02.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">02</span>
+                    <span class="hymn-name">The Fields They Gave</span>
+                    <span class="hymn-style">Americana Folk</span>
+                </a>
+                <a href="songs/song-03.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">03</span>
+                    <span class="hymn-name">Brother's Keeper</span>
+                    <span class="hymn-style">Traditional Hymn</span>
+                </a>
+                <a href="songs/song-04.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">04</span>
+                    <span class="hymn-name">Freedom's River</span>
+                    <span class="hymn-style">Americana Gospel</span>
+                </a>
+                <a href="songs/song-05.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">05</span>
+                    <span class="hymn-name">Carry the Colors Home</span>
+                    <span class="hymn-style">Gospel March</span>
+                </a>
+                <a href="songs/song-06.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">06</span>
+                    <span class="hymn-name">Greater Love</span>
+                    <span class="hymn-style">Reverent Hymn</span>
+                </a>
+                <a href="songs/song-07.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">07</span>
+                    <span class="hymn-name">The Watch They Kept</span>
+                    <span class="hymn-style">Folk Ballad</span>
+                </a>
+                <a href="songs/song-08.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">08</span>
+                    <span class="hymn-name">Home on Nelson's Ground</span>
+                    <span class="hymn-style">Appalachian Folk</span>
+                </a>
+                <a href="songs/song-09.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">09</span>
+                    <span class="hymn-name">Though the Body Sleeps</span>
+                    <span class="hymn-style">Traditional Hymn</span>
+                </a>
+                <a href="songs/song-10.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">10</span>
+                    <span class="hymn-name">Their Names Are Written</span>
+                    <span class="hymn-style">Gospel Hymn</span>
+                </a>
+                <a href="songs/song-11.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">11</span>
+                    <span class="hymn-name">Lay Down the Sword</span>
+                    <span class="hymn-style">Southern Gospel</span>
+                </a>
+                <a href="songs/song-12.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">12</span>
+                    <span class="hymn-name">By Kentucky Waters</span>
+                    <span class="hymn-style">Appalachian Gospel</span>
+                </a>
+                <a href="songs/song-13.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">13</span>
+                    <span class="hymn-name">The Soldier's Cross</span>
+                    <span class="hymn-style">Southern Gospel</span>
+                </a>
+                <a href="songs/song-14.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">14</span>
+                    <span class="hymn-name">Marching to a Better Shore</span>
+                    <span class="hymn-style">Gospel March</span>
+                </a>
+                <a href="songs/song-15.html" class="hymn-list-item animate-on-scroll">
+                    <span class="hymn-num">15</span>
+                    <span class="hymn-name">Rise, Faithful Soldier</span>
+                    <span class="hymn-style">Closing Anthem</span>
+                </a>
+            </div>
+
+            <div class="text-center animate-on-scroll" style="margin-top: 3rem;">
+                <a href="songs.html" class="hero-cta">
+                    <span>Listen &amp; Download</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <p class="footer-quote">&ldquo;We will not let their memory fade.&rdquo;</p>
+            <p class="footer-info">All songs are original compositions, written in honor of the men and women<br>interred at Camp Nelson National Cemetery.</p>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#dedication">Dedication</a>
+                <a href="songs.html">The Hymns</a>
+                <a href="tribute.html">Director's Tribute</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

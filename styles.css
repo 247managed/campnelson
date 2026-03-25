@@ -1,0 +1,1568 @@
+/* ==========================================================================
+   CAMP NELSON NATIONAL CEMETERY - HYMNAL WEBSITE
+   A memorial design: dark, reverent, gold-accented
+   ========================================================================== */
+
+/* ---------- Design Tokens ---------- */
+:root {
+    --bg-deep: #0a0c10;
+    --bg-section: #0f1218;
+    --surface-dark: #161a22;
+    --surface-card: #1a1f28;
+    --text-primary: #f0f1f3;
+    --text-secondary: #8a939e;
+    --text-muted: #5a6370;
+    --accent-gold: #c5a355;
+    --accent-gold-hover: #dbb96a;
+    --accent-gold-dim: rgba(197, 163, 85, 0.15);
+    --accent-gold-glow: rgba(197, 163, 85, 0.25);
+    --glass-bg: rgba(10, 12, 16, 0.88);
+    --glass-border: rgba(255, 255, 255, 0.04);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body.dark-theme {
+    font-family: var(--font-body);
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.text-center { text-align: center; }
+
+/* ---------- Particles Canvas ---------- */
+#particles-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ---------- Scroll Animations ---------- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Glass Header ---------- */
+.glass-header {
+    position: fixed;
+    top: 0; width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    padding: 0;
+    transition: padding 0.3s ease, background 0.3s ease;
+}
+.glass-header.scrolled {
+    padding: 0;
+    background: rgba(10, 12, 16, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+.brand-icon {
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+    opacity: 0.8;
+}
+.site-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+.modern-nav { display: flex; align-items: center; gap: 0; }
+.modern-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.modern-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent-gold);
+    transition: width 0.3s var(--ease-out);
+}
+.modern-nav a:hover { color: var(--text-primary); }
+.modern-nav a:hover::after { width: 100%; }
+.modern-nav a.active { color: var(--accent-gold); }
+.modern-nav a.active::after { width: 100%; }
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+}
+.mobile-menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ==========================================================================
+   HOME / DEDICATION PAGE
+   ========================================================================== */
+
+/* ---------- Hero Section ---------- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    background: url('CampNelson/IMG_0427.jpeg') center center / cover no-repeat;
+    opacity: 0.15;
+    filter: grayscale(30%);
+    z-index: 0;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(197, 163, 85, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(10, 12, 16, 1) 0%, transparent 50%);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+.hero-ornament {
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    opacity: 0.5;
+    letter-spacing: 8px;
+    margin-bottom: 2rem;
+}
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, var(--text-primary) 40%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-subtitle {
+    font-family: var(--font-accent);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+.hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--accent-gold);
+    margin: 0 auto 2rem;
+    opacity: 0.5;
+}
+.hero-location {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+.hero-location strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+.hero-era {
+    font-family: var(--font-accent);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s var(--ease-out);
+}
+.hero-cta:hover {
+    background: var(--accent-gold);
+    color: var(--bg-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(197, 163, 85, 0.25);
+}
+.hero-cta svg { transition: transform 0.3s ease; }
+.hero-cta:hover svg { transform: translateX(4px); }
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+}
+.scroll-indicator span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+}
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--accent-gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* ---------- Section Headers ---------- */
+.section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.section-description {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ---------- Dedication Section ---------- */
+.dedication-section {
+    position: relative;
+    z-index: 1;
+    padding: 8rem 0;
+    background: var(--bg-section);
+}
+.dedication-section .section-header { text-align: center; margin-bottom: 4rem; }
+
+.dedication-content { max-width: 800px; margin: 0 auto; }
+.dedication-block {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.dedication-line {
+    font-family: var(--font-accent);
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+}
+.dedication-accent {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+}
+.dedication-closing {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+.dedication-offer {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+.dedication-prayer {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+.dedication-prayer p {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.9;
+}
+.scripture-quote {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+.scripture-quote p {
+    font-family: var(--font-accent);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+.scripture-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+/* ---------- Hymn List Preview (Home page) ---------- */
+.hymn-preview-section {
+    position: relative;
+    z-index: 1;
+    padding: 8rem 0;
+    background: var(--bg-deep);
+}
+.hymn-preview-section .section-header { text-align: center; margin-bottom: 4rem; }
+
+.hymn-list-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.hymn-list-item {
+    display: grid;
+    grid-template-columns: 50px 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    text-decoration: none;
+    transition: all 0.3s var(--ease-out);
+}
+.hymn-list-item:first-child { border-top: 1px solid var(--border-subtle); }
+.hymn-list-item:hover {
+    background: var(--accent-gold-dim);
+    padding-left: 2rem;
+}
+.hymn-num {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.hymn-list-item:hover .hymn-num { color: var(--accent-gold); }
+.hymn-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+.hymn-style {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   SONGS / HYMNS PAGE
+   ========================================================================== */
+
+.songs-page-bg {
+    position: fixed;
+    inset: 0;
+    background: url('CampNelson/IMG_0249.jpeg') center center / cover no-repeat;
+    opacity: 0.2;
+    filter: grayscale(30%);
+    z-index: 0;
+    pointer-events: none;
+}
+.songs-page-bg-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 20%, rgba(197, 163, 85, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(10, 12, 16, 1) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+.songs-page { padding-top: 120px; position: relative; z-index: 1; }
+.songs-page .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Now Playing Bar */
+.now-playing-bar {
+    position: fixed;
+    bottom: -80px;
+    left: 0; right: 0;
+    z-index: 999;
+    background: rgba(22, 26, 34, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--accent-gold-dim);
+    transition: bottom 0.4s var(--ease-out);
+    padding: 0.75rem 0;
+}
+.now-playing-bar.active { bottom: 0; }
+.now-playing-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.now-playing-info { display: flex; flex-direction: column; min-width: 150px; }
+.now-playing-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+}
+.now-playing-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+.now-playing-controls {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.np-btn {
+    background: var(--accent-gold);
+    color: var(--bg-deep);
+    border: none;
+    border-radius: 50%;
+    width: 36px; height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.np-btn:hover { background: var(--accent-gold-hover); transform: scale(1.05); }
+.np-progress-wrap {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+.np-progress {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-gold);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+.np-time {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Song Grid */
+.song-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+/* Song Cards */
+.modern-song-card {
+    background: var(--surface-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.4s var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+.modern-song-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--accent-gold);
+    transition: height 0.4s var(--ease-out);
+}
+.modern-song-card:hover::before { height: 100%; }
+.modern-song-card:hover {
+    border-color: rgba(197, 163, 85, 0.15);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+.modern-song-card.playing {
+    border-color: rgba(197, 163, 85, 0.3);
+    box-shadow: 0 0 40px rgba(197, 163, 85, 0.08);
+}
+.modern-song-card.playing::before { height: 100%; }
+
+.card-content { padding: 2rem 2.5rem; }
+
+.song-number {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.modern-song-card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+.modern-song-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.modern-song-card h3 a:hover {
+    color: var(--accent-gold);
+}
+.song-meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Audio Player */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.icon-btn {
+    background: var(--accent-gold);
+    color: var(--bg-deep);
+    border: none;
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.icon-btn:hover {
+    background: var(--accent-gold-hover);
+    transform: scale(1.05);
+}
+.play-btn .pause-svg { display: none; }
+.play-btn.is-playing .play-svg { display: none; }
+.play-btn.is-playing .pause-svg { display: block; }
+
+.progress-container {
+    flex-grow: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: height 0.2s ease;
+}
+.progress-container:hover { height: 8px; }
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-hover));
+    width: 0%;
+    border-radius: 3px;
+    transition: width 0.1s linear;
+    position: relative;
+}
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -4px; top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 12px; height: 12px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+.progress-container:hover .progress-bar::after { transform: translateY(-50%) scale(1); }
+
+.time-display {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Card Actions */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+}
+.text-btn:hover { color: var(--accent-gold); }
+
+.download-btn {
+    background: transparent;
+    border: 1px solid rgba(197, 163, 85, 0.3);
+    color: var(--accent-gold);
+    width: 40px; height: 40px;
+}
+.download-btn:hover {
+    background: var(--accent-gold);
+    color: var(--bg-deep);
+    border-color: var(--accent-gold);
+}
+
+/* Lyrics Dropdown */
+.lyrics-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s var(--ease-out), opacity 0.4s ease, margin-top 0.4s ease, padding-top 0.4s ease;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    border-top: 1px solid transparent;
+}
+.lyrics-content.show {
+    max-height: 3000px;
+    opacity: 1;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top-color: var(--border-subtle);
+}
+.lyrics-content p { margin-bottom: 1.5rem; }
+.lyrics-content strong {
+    color: var(--accent-gold);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   TRIBUTE PAGE
+   ========================================================================== */
+
+.tribute-page-bg {
+    position: fixed;
+    inset: 0;
+    background: url('CampNelson/IMG_0254.jpeg') center center / cover no-repeat;
+    opacity: 0.2;
+    filter: grayscale(30%);
+    z-index: 0;
+    pointer-events: none;
+}
+.tribute-page-bg-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 20%, rgba(197, 163, 85, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(10, 12, 16, 1) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+.tribute-page { padding-top: 0; position: relative; z-index: 1; }
+
+/* Tribute Hero */
+.tribute-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 100px;
+}
+.tribute-hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+.tribute-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+.tribute-glow-1 {
+    width: 600px; height: 600px;
+    background: var(--accent-gold);
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    animation: glowFloat1 8s ease-in-out infinite;
+}
+.tribute-glow-2 {
+    width: 300px; height: 300px;
+    background: #7b6834;
+    bottom: -100px; left: 20%;
+    animation: glowFloat2 10s ease-in-out infinite;
+}
+.tribute-glow-3 {
+    width: 250px; height: 250px;
+    background: #3a5a7c;
+    bottom: 0; right: 15%;
+    animation: glowFloat3 12s ease-in-out infinite;
+}
+@keyframes glowFloat1 { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(20px); } }
+@keyframes glowFloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes glowFloat3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+
+.tribute-hero-content { text-align: center; position: relative; z-index: 1; }
+.tribute-ornament-top { margin-bottom: 2rem; opacity: 0.8; }
+.tribute-ornament-bottom { margin-top: 1.5rem; }
+
+.tribute-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+}
+.tribute-name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 600;
+    letter-spacing: 6px;
+    background: linear-gradient(180deg, var(--accent-gold) 0%, #8b7635 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+.tribute-title-role {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-primary);
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+/* Portrait */
+.tribute-portrait-section {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0 4rem;
+}
+.tribute-portrait-frame {
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.portrait-border-glow {
+    position: absolute;
+    inset: -4px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent-gold), transparent, var(--accent-gold));
+    opacity: 0.3;
+    filter: blur(1px);
+}
+.portrait-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(197, 163, 85, 0.3);
+}
+.tribute-portrait {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+.portrait-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, var(--bg-deep) 100%);
+    pointer-events: none;
+}
+.portrait-caption {
+    margin-top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.caption-star { color: var(--accent-gold); opacity: 0.5; font-size: 0.9rem; }
+
+/* Tribute Letter */
+.tribute-letter-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0 6rem;
+}
+.tribute-narrow { max-width: 750px; }
+
+.tribute-letter,
+.tribute-letter-continued,
+.tribute-letter-closing { margin-bottom: 3rem; }
+
+.letter-header { margin-bottom: 2rem; }
+.letter-salutation {
+    font-family: var(--font-accent);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--accent-gold);
+}
+.letter-body p {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+.letter-close {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--text-secondary) !important;
+}
+.letter-signature {
+    font-family: var(--font-display) !important;
+    font-size: 1rem !important;
+    color: var(--accent-gold) !important;
+    letter-spacing: 1px;
+}
+
+/* Quality Cards */
+.tribute-qualities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+.quality-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s var(--ease-out);
+}
+.quality-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(197, 163, 85, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.quality-icon { margin-bottom: 1.25rem; }
+.quality-card h3 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    color: var(--accent-gold);
+}
+.quality-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+/* Tribute Quote */
+.tribute-quote {
+    position: relative;
+    margin: 3rem 0 4rem;
+    padding: 2.5rem;
+    background: var(--surface-card);
+    border-radius: 12px;
+    border-left: 3px solid var(--accent-gold);
+}
+.quote-mark {
+    position: absolute;
+    top: -10px; left: 20px;
+    font-family: var(--font-accent);
+    font-size: 5rem;
+    color: var(--accent-gold);
+    opacity: 0.15;
+    line-height: 1;
+}
+.tribute-quote p {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.9;
+    color: var(--text-primary);
+}
+
+/* Tribute Banner */
+.tribute-banner {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 0;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(197, 163, 85, 0.04) 0%, transparent 70%);
+}
+.tribute-banner-content { position: relative; }
+.banner-ornament { margin-bottom: 2rem; opacity: 0.6; }
+.banner-text {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+}
+.banner-verse {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 1rem;
+}
+.banner-cite {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+.tribute-cta-section {
+    position: relative;
+    z-index: 1;
+    padding: 0 0 6rem;
+}
+
+/* Tribute floating stars */
+.tribute-stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0 3rem;
+    text-align: center;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-section);
+}
+.footer-ornament {
+    color: var(--accent-gold);
+    opacity: 0.4;
+    letter-spacing: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.footer-quote {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+.footer-info {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.footer-links a {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+.footer-links a:hover { color: var(--accent-gold); }
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle { display: flex; }
+
+    .modern-nav {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 280px; height: 100vh;
+        background: rgba(15, 18, 24, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        transition: right 0.4s var(--ease-out);
+        border-left: 1px solid var(--border-subtle);
+    }
+    .modern-nav.open { right: 0; }
+    .modern-nav a {
+        margin: 0;
+        padding: 1.25rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-container { padding: 0.75rem 1.5rem; }
+    .site-title { font-size: 0.95rem; }
+    .container { padding: 0 1.25rem; }
+
+    .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .dedication-section { padding: 4rem 0; }
+    .hymn-preview-section { padding: 4rem 0; }
+
+    .hymn-list-item {
+        grid-template-columns: 35px 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .hymn-style { display: none; }
+
+    .card-content { padding: 1.5rem; }
+    .modern-song-card h3 { font-size: 1.2rem; }
+
+    .tribute-qualities {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .now-playing-inner { gap: 1rem; }
+    .now-playing-title { max-width: 120px; font-size: 0.8rem; }
+    .now-playing-label { font-size: 0.55rem; }
+
+    .tribute-name { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .tribute-portrait-frame { max-width: 280px; }
+}
+
+@media (max-width: 480px) {
+    .hero-cta {
+        padding: 0.85rem 1.8rem;
+        font-size: 0.75rem;
+    }
+    .now-playing-info { min-width: auto; }
+    .np-time { display: none; }
+}
+
+/* ==========================================================================
+   INDIVIDUAL SONG PAGES
+   ========================================================================== */
+
+/* Song Page Background */
+.song-page-bg {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    filter: grayscale(30%);
+    z-index: 0;
+    pointer-events: none;
+}
+.song-page-bg-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 20%, rgba(197, 163, 85, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(10, 12, 16, 1) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Song Page Hero */
+.song-page-hero {
+    position: relative;
+    z-index: 1;
+    padding: 10rem 2rem 4rem;
+    text-align: center;
+    overflow: hidden;
+}
+.song-page-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(197, 163, 85, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(10, 12, 16, 0.95) 0%, transparent 50%);
+    z-index: 1;
+}
+.song-page-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.song-page-number {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+.song-page-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    background: linear-gradient(180deg, var(--text-primary) 40%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.song-page-meta {
+    font-family: var(--font-accent);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Song Page Content */
+.song-page-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+}
+
+/* Side-by-side Player + Lyrics Layout */
+.song-player-lyrics-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+.song-player-column {
+    position: sticky;
+    top: 100px;
+}
+
+/* Song Player Section */
+.song-player-section {
+    padding: 2rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.02);
+}
+.song-player-section .custom-audio-player {
+    margin-top: 0;
+}
+
+/* Song Lyrics Section */
+.song-lyrics-section {
+    margin-bottom: 0;
+}
+.song-lyrics-section h3 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(197, 163, 85, 0.2);
+}
+.song-lyrics-body p {
+    font-family: var(--font-accent);
+    font-size: 1.25rem;
+    line-height: 2;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+.song-lyrics-body p strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Photo Gallery Section */
+.song-photos-section {
+    margin-bottom: 3rem;
+}
+.song-photos-section h3 {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(197, 163, 85, 0.2);
+}
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.photo-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 1px solid var(--border-subtle);
+    aspect-ratio: 4/3;
+}
+.photo-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: grayscale(20%);
+}
+.photo-gallery-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+.photo-gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(transparent, rgba(10, 12, 16, 0.85));
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.photo-gallery-item:hover figcaption {
+    opacity: 1;
+}
+.photo-gallery-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-muted);
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1rem;
+    border: 1px dashed rgba(197, 163, 85, 0.15);
+    border-radius: 2px;
+}
+
+/* Player Labels */
+.player-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(197, 163, 85, 0.15);
+}
+.player-label svg {
+    color: var(--accent-gold);
+}
+.prayer-player-section {
+    margin-top: 1.5rem;
+}
+
+/* Content Tabs */
+.content-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(197, 163, 85, 0.2);
+}
+.content-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: -1px;
+}
+.content-tab:hover {
+    color: var(--text-secondary);
+}
+.content-tab.active {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+}
+.content-tab svg {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+.content-tab.active svg {
+    opacity: 0.8;
+}
+.tab-content {
+    display: none;
+    animation: tabFadeIn 0.4s ease;
+}
+.tab-content.active {
+    display: block;
+}
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Prayer Section */
+.song-prayer-section {
+    margin-bottom: 0;
+}
+.prayer-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.prayer-body p {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-indent: 1.5rem;
+}
+.prayer-body p:first-child {
+    text-indent: 0;
+    font-style: italic;
+    color: var(--accent-gold);
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.prayer-closing {
+    text-indent: 0 !important;
+    text-align: center;
+    font-style: italic;
+    margin-top: 2rem;
+}
+.prayer-amen {
+    text-indent: 0 !important;
+    text-align: center;
+    font-family: var(--font-display) !important;
+    font-size: 1.3rem !important;
+    letter-spacing: 3px;
+    color: var(--accent-gold) !important;
+    margin-top: 0.5rem;
+}
+
+/* Song Navigation (Prev / Next) */
+.song-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.song-nav .song-nav-all {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    max-width: 100%;
+}
+.song-nav a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    max-width: 45%;
+}
+.song-nav a:hover {
+    transform: translateY(-2px);
+}
+.song-nav-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+.song-nav-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+.song-nav a.next {
+    text-align: right;
+    margin-left: auto;
+}
+.song-nav-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid rgba(197, 163, 85, 0.3);
+    transition: all 0.3s ease;
+}
+.song-nav-all:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+    .song-page-hero { padding: 8rem 1.5rem 3rem; }
+    .song-page-content { padding: 2rem 1.5rem 3rem; }
+    .song-player-lyrics-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .song-player-column {
+        position: static;
+    }
+    .photo-gallery { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .song-nav { flex-wrap: wrap; }
+    .song-nav a { max-width: 100%; }
+}

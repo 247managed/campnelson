@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director's Tribute | Camp Nelson National Cemetery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="tribute-page-bg" aria-hidden="true"></div>
+    <div class="tribute-page-bg-overlay" aria-hidden="true"></div>
+
+    <!-- Tribute-specific floating elements -->
+    <div class="tribute-stars" id="tribute-stars" aria-hidden="true"></div>
+
+    <header class="glass-header" id="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="site-brand">
+                <span class="brand-icon">&#9734;</span>
+                <span class="site-title">Songs of the Faithful Servant</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="modern-nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#dedication">Dedication</a>
+                <a href="songs.html">The Hymns</a>
+                <a href="tribute.html" class="active">Director's Tribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content tribute-page">
+
+        <!-- Tribute Hero -->
+        <section class="tribute-hero">
+            <div class="tribute-hero-bg" aria-hidden="true">
+                <div class="tribute-glow tribute-glow-1"></div>
+                <div class="tribute-glow tribute-glow-2"></div>
+                <div class="tribute-glow tribute-glow-3"></div>
+            </div>
+            <div class="container">
+                <div class="tribute-hero-content animate-on-scroll">
+                    <div class="tribute-ornament-top">
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" aria-hidden="true">
+                            <path d="M0 20h45M75 20h45" stroke="var(--accent-gold)" stroke-width="1" opacity="0.5"/>
+                            <path d="M52 8l8 12-8 12-8-12z" fill="none" stroke="var(--accent-gold)" stroke-width="1" opacity="0.7"/>
+                            <circle cx="60" cy="20" r="3" fill="var(--accent-gold)" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <span class="tribute-label">A Personal Tribute</span>
+                    <h1 class="tribute-name">Michael</h1>
+                    <p class="tribute-title-role">Director, Camp Nelson National Cemetery</p>
+                    <div class="tribute-ornament-bottom">
+                        <svg width="200" height="20" viewBox="0 0 200 20" fill="none" aria-hidden="true">
+                            <path d="M0 10h80M120 10h80" stroke="var(--accent-gold)" stroke-width="1" opacity="0.4"/>
+                            <circle cx="90" cy="10" r="2" fill="var(--accent-gold)" opacity="0.6"/>
+                            <circle cx="100" cy="10" r="3" fill="var(--accent-gold)" opacity="0.8"/>
+                            <circle cx="110" cy="10" r="2" fill="var(--accent-gold)" opacity="0.6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portrait Section -->
+        <section class="tribute-portrait-section">
+            <div class="container">
+                <div class="tribute-portrait-frame animate-on-scroll">
+                    <div class="portrait-border-glow" aria-hidden="true"></div>
+                    <div class="portrait-wrapper">
+                        <img src="images/director-michael.jpg" alt="Portrait of Director Michael, Camp Nelson National Cemetery" class="tribute-portrait" loading="lazy">
+                        <div class="portrait-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="portrait-caption">
+                        <span class="caption-star">&#9734;</span>
+                        <span>The Faithful Servant</span>
+                        <span class="caption-star">&#9734;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tribute Letter -->
+        <section class="tribute-letter-section">
+            <div class="container tribute-narrow">
+                <div class="tribute-letter animate-on-scroll">
+                    <div class="letter-header">
+                        <span class="letter-salutation">To Michael,</span>
+                    </div>
+
+                    <div class="letter-body">
+                        <p>There are people in this world whose work is simply a job, and then there are people whose work is a calling. You, Michael, are one of the called.</p>
+
+                        <p>As Director of Camp Nelson National Cemetery, you have been entrusted with something far greater than grounds and granite. You have been entrusted with the legacy of thousands of American heroes &mdash; men and women who gave the last full measure of devotion so that this nation might endure. And you have honored that trust with a steadfastness, dignity, and tenderness that words can scarcely capture.</p>
+
+                        <p>Every morning you walk among the headstones, and you do not see rows of marble. You see people. You see fathers, mothers, sons, daughters, husbands, and wives. You see the young private who never made it home and the old veteran who served a full career and asked only for a quiet resting place at the end. You see them all, and you care for them all.</p>
+                    </div>
+                </div>
+
+                <div class="tribute-qualities animate-on-scroll">
+                    <div class="quality-card">
+                        <div class="quality-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Guardian of Honor</h3>
+                        <p>You ensure that every headstone stands straight, every flag flies with purpose, and every family who visits finds a place of peace and reverence worthy of their loved one's sacrifice.</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h3>Shepherd of Families</h3>
+                        <p>You greet the grieving with compassion that cannot be taught. You stand with families in their darkest hours, offering not just professionalism but genuine human warmth and grace.</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>Keeper of Legacy</h3>
+                        <p>Through your devotion, the stories of those who rest at Camp Nelson will never be forgotten. You are the living bridge between their sacrifice and our memory.</p>
+                    </div>
+                </div>
+
+                <div class="tribute-letter-continued animate-on-scroll">
+                    <div class="letter-body">
+                        <p>The grounds of Camp Nelson are more than a cemetery under your care &mdash; they are a sanctuary. You have made this hallowed earth a place where history breathes, where sacrifice is felt in the stillness of the morning air, and where every visitor leaves changed.</p>
+
+                        <p>You carry a weight that most people will never understand: the weight of being the last person to ensure that a veteran's final resting place reflects the honor of their service. And you carry it not with burden, but with purpose. Not with weariness, but with love.</p>
+
+                        <p>These hymns were written because of places like Camp Nelson and people like you. Your dedication inspired the words. Your faithfulness gave them meaning. Your service to the fallen is itself a kind of hymn &mdash; sung not with music, but with action, every single day.</p>
+                    </div>
+                </div>
+
+                <blockquote class="tribute-quote animate-on-scroll">
+                    <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                    <p>A cemetery director does not merely maintain the grounds where heroes sleep. He stands as the final sentinel &mdash; the last one who will ensure that their sacrifice is treated with the honor it deserves, long after the world has moved on.</p>
+                </blockquote>
+
+                <div class="tribute-letter-closing animate-on-scroll">
+                    <div class="letter-body">
+                        <p>Michael, this hymnal is dedicated to the veterans of Camp Nelson, but it is also dedicated to you &mdash; because without people like you, the memory of their service would fade into silence. You are the reason the silence speaks.</p>
+
+                        <p>Thank you for your service to those who served. Thank you for your faithfulness. Thank you for being the faithful servant that Camp Nelson &mdash; and this nation &mdash; so deeply needs.</p>
+
+                        <p class="letter-close">With deepest respect and gratitude,</p>
+                        <p class="letter-signature">The Author of These Hymns</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Tribute Banner -->
+        <section class="tribute-banner">
+            <div class="container">
+                <div class="tribute-banner-content animate-on-scroll">
+                    <div class="banner-ornament">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1" opacity="0.6">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                    </div>
+                    <p class="banner-text">The Faithful Servant</p>
+                    <p class="banner-verse">&ldquo;Well done, good and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.&rdquo;</p>
+                    <cite class="banner-cite">&mdash; Matthew 25:23</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link to Hymns -->
+        <section class="tribute-cta-section">
+            <div class="container text-center">
+                <a href="songs.html" class="hero-cta animate-on-scroll">
+                    <span>Listen to the Hymns</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <p class="footer-quote">&ldquo;We will not let their memory fade.&rdquo;</p>
+            <p class="footer-info">All songs are original compositions, written in honor of the men and women<br>interred at Camp Nelson National Cemetery.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#dedication">Dedication</a>
+                <a href="songs.html">The Hymns</a>
+                <a href="tribute.html">Director's Tribute</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

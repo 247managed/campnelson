@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fields They Gave | Songs of the Faithful Servant</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="song-page-bg" style="background-image: url('../CampNelson/IMG_0439.jpeg');" aria-hidden="true"></div>
+    <div class="song-page-bg-overlay" aria-hidden="true"></div>
+
+    <header class="glass-header" id="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="site-brand">
+                <span class="brand-icon">&#9734;</span>
+                <span class="site-title">Songs of the Faithful Servant</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="modern-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#dedication">Dedication</a>
+                <a href="../songs.html" class="active">The Hymns</a>
+                <a href="../tribute.html">Director's Tribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="song-page-hero">
+        <div class="hero-overlay"></div>
+        <div class="song-page-hero-content animate-on-scroll">
+            <div class="hero-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <span class="song-page-number">Hymn 02</span>
+            <h1 class="song-page-title">The Fields They Gave</h1>
+        </div>
+    </section>
+
+    <main class="song-page-content">
+
+        <div class="song-player-lyrics-row animate-on-scroll">
+
+            <!-- Left Column: Both Players -->
+            <div class="song-player-column">
+                <div class="song-player-section">
+                    <div class="player-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        <span>The Hymn</span>
+                    </div>
+                    <div class="custom-audio-player">
+                        <audio data-song-title="The Fields They Gave" src="../mp3/The Fields They Gave.mp3" preload="none"></audio>
+                        <div class="player-controls">
+                            <button class="icon-btn play-btn" aria-label="Play The Fields They Gave">
+                                <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress-container"><div class="progress-bar"></div></div>
+                            <span class="time-display">0:00</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="../mp3/The Fields They Gave.mp3" download class="icon-btn download-btn" title="Download Hymn MP3" aria-label="Download Hymn MP3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="song-player-section prayer-player-section">
+                    <div class="player-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M17.73 12.02l3.98-3.98a.996.996 0 000-1.41l-4.34-4.34a.996.996 0 00-1.41 0l-3.98 3.98L8 2.29a1.001 1.001 0 00-1.41 0L2.25 6.63a.996.996 0 000 1.41l3.98 3.98L2.25 16a.996.996 0 000 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.39.39 1.02.39 1.41 0l4.34-4.34a.996.996 0 000-1.41l-3.98-3.98z"/></svg>
+                        <span>The Prayer</span>
+                    </div>
+                    <div class="custom-audio-player">
+                        <audio data-song-title="A Prayer Over Hallowed Ground" src="../mp3/A Prayer Over Hallowed Ground.mp3" preload="none"></audio>
+                        <div class="player-controls">
+                            <button class="icon-btn play-btn" aria-label="Play Prayer">
+                                <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress-container"><div class="progress-bar"></div></div>
+                            <span class="time-display">0:00</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="../mp3/A Prayer Over Hallowed Ground.mp3" download class="icon-btn download-btn" title="Download Prayer MP3" aria-label="Download Prayer MP3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Tabbed Lyrics / Prayer Text -->
+            <div class="song-lyrics-column">
+                <div class="content-tabs">
+                    <button class="content-tab active" data-tab="lyrics">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        Lyrics
+                    </button>
+                    <button class="content-tab" data-tab="prayer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.73 12.02l3.98-3.98a.996.996 0 000-1.41l-4.34-4.34a.996.996 0 00-1.41 0l-3.98 3.98L8 2.29a1.001 1.001 0 00-1.41 0L2.25 6.63a.996.996 0 000 1.41l3.98 3.98L2.25 16a.996.996 0 000 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.39.39 1.02.39 1.41 0l4.34-4.34a.996.996 0 000-1.41l-3.98-3.98z"/></svg>
+                        Prayer
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="tab-lyrics">
+                    <div class="song-lyrics-section">
+                        <div class="song-lyrics-body">
+                            <p><strong>Verse 1</strong>
+                            There were fields of morning glory,<br>
+                            Where the young men marched away,<br>
+                            Trading home for greater duty,<br>
+                            Laying down their peaceful days.</p>
+                            <p><strong>Chorus</strong>
+                            Oh, the fields they gave are hallowed now with rain,<br>
+                            Every blade of grass a whisper of the ones who bore our pain.<br>
+                            Oh, the fields they gave belong to God alone,<br>
+                            And the men who fell to keep us free have finally come home.</p>
+                            <p><strong>Verse 2</strong>
+                            Father, brother, husband, neighbor,<br>
+                            Walked together side by side,<br>
+                            Bound by oath and sacred labor,<br>
+                            Swore to keep this nation's pride.</p>
+                            <p><strong>Chorus</strong>
+                            Oh, the fields they gave are hallowed now with rain,<br>
+                            Every blade of grass a whisper of the ones who bore our pain.<br>
+                            Oh, the fields they gave belong to God alone,<br>
+                            And the men who fell to keep us free have finally come home.</p>
+                            <p><strong>Verse 3</strong>
+                            Not for glory or for conquest,<br>
+                            Not for land or title's gain,<br>
+                            But for those who bore the heaviest,<br>
+                            That their children might remain.</p>
+                            <p><strong>Bridge</strong>
+                            We are standing on their shoulders,<br>
+                            Every freedom that we hold,<br>
+                            Was bought by those who grew no older,<br>
+                            Whose story must be told.</p>
+                            <p><strong>Final Chorus</strong>
+                            Oh, the fields they gave are hallowed now with rain,<br>
+                            Every blade of grass a whisper of the ones who bore our pain.<br>
+                            Oh, the fields they gave belong to God alone,<br>
+                            And the men who fell to keep us free have finally come home.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-prayer">
+                    <div class="song-prayer-section">
+                        <h4 class="prayer-title">A Prayer Over Hallowed Ground</h4>
+                        <div class="prayer-body">
+                            <p>Lord God of the living and the dead,</p>
+                            <p>We come to You from fields made holy &mdash; not by the grandeur of monuments or the eloquence of speeches, but by the simple, staggering weight of what was willingly laid down here. The ground beneath our feet was purchased at a price no treasurer can count and no ledger can contain. We stand upon it now in gratitude too deep for words, and yet we try &mdash; because to fall silent before such sacrifice would be its own kind of failure.</p>
+                            <p>We remember, Lord, that they were not abstractions. They were fathers who read bedtime stories and brothers who teased at the supper table. They were husbands who knew which side of the bed was theirs, and neighbors who showed up without being asked. They came from ordinary lives &mdash; from front porches and morning routines, from the quiet rhythms of home &mdash; and they traded all of it for a duty they could not refuse and a love they could not explain, only act upon.</p>
+                            <p>They did not go for conquest. They did not go for glory. They went so that children they would never meet might grow up in a country still worth inheriting. That is a love, Father, that mirrors something ancient and divine &mdash; the willingness to pour out oneself entirely for the sake of another. We do not compare it glibly. We simply name it, and we bow.</p>
+                            <p>We ask, Lord, that You consecrate our remembering. Let it be more than ceremony. Let it be more than the proper sequence of a solemn day. Let it cost us something &mdash; a resolved heart, a changed life, a commitment to be worthy of the freedom held out to us by hands that could hold on no longer.</p>
+                            <p>We are standing on their shoulders, every one of us. Every liberty we exercise, every morning we wake in peace, every future we are free to imagine &mdash; these were not accidents of history. They were answers to a question asked in fire and answered in blood. We confess, Father, that we too easily forget. That the daily ease of the lives they purchased can dull us to the price. Forgive our forgetting. Restore our gratitude to the sharp, clear thing it ought to be.</p>
+                            <p>And now &mdash; speak comfort over every family represented here. Over every wife who became a widow in the morning of her life. Over every child who memorized a face from a photograph. Over every parent who outlived the child they once taught to walk. Do not let their grief be a place of only sorrow. Let it also be a place where they encounter You &mdash; the One who knows what it is to give a Son, and to receive Him home.</p>
+                            <p>For the fields they gave are Yours, Lord &mdash; hallowed by sacrifice, watered by tears, and tended now by the One who forgets nothing and loses no one who was ever His.</p>
+                            <p>May those who fell to keep us free rest now in the only peace that has no end. And may we, who walk yet among the living, carry their story forward &mdash; not as a relic behind glass, but as a living flame passed hand to hand, generation to generation, until the last bugle sounds and we are, all of us, finally home.</p>
+                            <p class="prayer-closing">We ask this with humble and grateful hearts,</p>
+                            <p class="prayer-amen">Amen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="song-nav animate-on-scroll">
+            <a href="song-01.html" class="prev">
+                <span class="song-nav-label">Previous Hymn</span>
+                <span class="song-nav-title">Upon This Sacred Ground</span>
+            </a>
+            <a href="../songs.html" class="song-nav-all">All Hymns</a>
+            <a href="song-03.html" class="next">
+                <span class="song-nav-label">Next Hymn</span>
+                <span class="song-nav-title">Brother's Keeper</span>
+            </a>
+        </nav>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <p class="footer-quote">&ldquo;We will not let their memory fade.&rdquo;</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#dedication">Dedication</a>
+                <a href="../songs.html">The Hymns</a>
+                <a href="../tribute.html">Director's Tribute</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home on Nelson's Ground | Songs of the Faithful Servant</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="song-page-bg" style="background-image: url('../CampNelson/IMG_0426.jpeg');" aria-hidden="true"></div>
+    <div class="song-page-bg-overlay" aria-hidden="true"></div>
+
+    <header class="glass-header" id="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="site-brand">
+                <span class="brand-icon">&#9734;</span>
+                <span class="site-title">Songs of the Faithful Servant</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="modern-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#dedication">Dedication</a>
+                <a href="../songs.html" class="active">The Hymns</a>
+                <a href="../tribute.html">Director's Tribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="song-page-hero">
+        <div class="hero-overlay"></div>
+        <div class="song-page-hero-content animate-on-scroll">
+            <div class="hero-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <span class="song-page-number">Hymn 08</span>
+            <h1 class="song-page-title">Home on Nelson's Ground</h1>
+        </div>
+    </section>
+
+    <main class="song-page-content">
+
+        <div class="song-player-lyrics-row animate-on-scroll">
+
+            <!-- Left Column: Both Players -->
+            <div class="song-player-column">
+                <div class="song-player-section">
+                    <div class="player-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        <span>The Hymn</span>
+                    </div>
+                    <div class="custom-audio-player">
+                        <audio data-song-title="Home on Nelson's Ground" src="../mp3/Home on Nelsons Ground.mp3" preload="none"></audio>
+                        <div class="player-controls">
+                            <button class="icon-btn play-btn" aria-label="Play Home on Nelson's Ground">
+                                <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress-container"><div class="progress-bar"></div></div>
+                            <span class="time-display">0:00</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="../mp3/Home on Nelsons Ground.mp3" download class="icon-btn download-btn" title="Download Hymn MP3" aria-label="Download Hymn MP3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="song-player-section prayer-player-section">
+                    <div class="player-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M17.73 12.02l3.98-3.98a.996.996 0 000-1.41l-4.34-4.34a.996.996 0 00-1.41 0l-3.98 3.98L8 2.29a1.001 1.001 0 00-1.41 0L2.25 6.63a.996.996 0 000 1.41l3.98 3.98L2.25 16a.996.996 0 000 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.39.39 1.02.39 1.41 0l4.34-4.34a.996.996 0 000-1.41l-3.98-3.98z"/></svg>
+                        <span>The Prayer</span>
+                    </div>
+                    <div class="custom-audio-player">
+                        <audio data-song-title="Prayer - Home on Nelson's Ground" src="../mp3/prayer-placeholder.mp3" preload="none"></audio>
+                        <div class="player-controls">
+                            <button class="icon-btn play-btn" aria-label="Play Prayer">
+                                <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress-container"><div class="progress-bar"></div></div>
+                            <span class="time-display">0:00</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="../mp3/prayer-placeholder.mp3" download class="icon-btn download-btn" title="Download Prayer MP3" aria-label="Download Prayer MP3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Tabbed Lyrics / Prayer Text -->
+            <div class="song-lyrics-column">
+                <div class="content-tabs">
+                    <button class="content-tab active" data-tab="lyrics">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        Lyrics
+                    </button>
+                    <button class="content-tab" data-tab="prayer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.73 12.02l3.98-3.98a.996.996 0 000-1.41l-4.34-4.34a.996.996 0 00-1.41 0l-3.98 3.98L8 2.29a1.001 1.001 0 00-1.41 0L2.25 6.63a.996.996 0 000 1.41l3.98 3.98L2.25 16a.996.996 0 000 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.39.39 1.02.39 1.41 0l4.34-4.34a.996.996 0 000-1.41l-3.98-3.98z"/></svg>
+                        Prayer
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="tab-lyrics">
+                    <div class="song-lyrics-section">
+                        <div class="song-lyrics-body">
+                            <p><strong>Verse 1</strong>
+                Where the rolling hills of Kentucky,<br>
+                Meet the river winding down,<br>
+                There's a place of peace and memory,<br>
+                There's a hallowed, holy ground.<br>
+                Men from North and men from South met,<br>
+                Men in freedom, men in chains,<br>
+                And together in God's service,<br>
+                Gave their lives upon these plains.</p>
+                <p><strong>Chorus</strong>
+                Home on Nelson's ground, dear soldier,<br>
+                Home where memory and morning meet,<br>
+                Home where God has marked your resting,<br>
+                Home beneath the clover's feet.<br>
+                Rest on Nelson's ground, dear soldier,<br>
+                All your marching now is done,<br>
+                Kentucky's hills will be your pillow,<br>
+                Sleep beneath the setting sun.</p>
+                <p><strong>Verse 2</strong>
+                In the summer, roses scatter,<br>
+                On the stones where brave men lie,<br>
+                And the children come to wonder,<br>
+                At the names they're passing by.<br>
+                "Who were these?" the children question,<br>
+                And we answer, "They were men,<br>
+                Who gave everything they carried,<br>
+                So that peace might come again."</p>
+                <p><strong>Verse 3</strong>
+                When the Judgment Day is calling,<br>
+                And the graves all open wide,<br>
+                From this ground in Nelson's valley,<br>
+                They will walk with God's own pride.<br>
+                And the nation they had purchased,<br>
+                With the currency of pain,<br>
+                Will stand before its Maker,<br>
+                And say: "Lord, it was not in vain."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-prayer">
+                    <div class="song-prayer-section">
+                        <h4 class="prayer-title">Prayer</h4>
+                        <div class="prayer-body">
+                            <p class="prayer-closing">Prayer coming soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="song-nav animate-on-scroll">
+            <a href="song-07.html" class="prev">
+                <span class="song-nav-label">Previous Hymn</span>
+                <span class="song-nav-title">The Watch They Kept</span>
+            </a>
+            <a href="../songs.html" class="song-nav-all">All Hymns</a>
+            <a href="song-09.html" class="next">
+                <span class="song-nav-label">Next Hymn</span>
+                <span class="song-nav-title">Though the Body Sleeps</span>
+            </a>
+        </nav>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <p class="footer-quote">&ldquo;We will not let their memory fade.&rdquo;</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#dedication">Dedication</a>
+                <a href="../songs.html">The Hymns</a>
+                <a href="../tribute.html">Director's Tribute</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=3"></script>
+</body>
+</html>

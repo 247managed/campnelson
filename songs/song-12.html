@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Kentucky Waters | Songs of the Faithful Servant</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="song-page-bg" style="background-image: url('../CampNelson/IMG_0426.jpeg');" aria-hidden="true"></div>
+    <div class="song-page-bg-overlay" aria-hidden="true"></div>
+
+    <header class="glass-header" id="site-header">
+        <div class="nav-container">
+            <a href="../index.html" class="site-brand">
+                <span class="brand-icon">&#9734;</span>
+                <span class="site-title">Songs of the Faithful Servant</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="modern-nav" id="main-nav">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#dedication">Dedication</a>
+                <a href="../songs.html" class="active">The Hymns</a>
+                <a href="../tribute.html">Director's Tribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="song-page-hero">
+        <div class="hero-overlay"></div>
+        <div class="song-page-hero-content animate-on-scroll">
+            <div class="hero-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <span class="song-page-number">Hymn 12</span>
+            <h1 class="song-page-title">By Kentucky Waters</h1>
+        </div>
+    </section>
+
+    <main class="song-page-content">
+
+        <div class="song-player-lyrics-row animate-on-scroll">
+
+            <!-- Left Column: Both Players -->
+            <div class="song-player-column">
+                <div class="song-player-section">
+                    <div class="player-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        <span>The Hymn</span>
+                    </div>
+                    <div class="custom-audio-player">
+                        <audio data-song-title="By Kentucky Waters" src="../mp3/By Kentucky Waters.mp3" preload="none"></audio>
+                        <div class="player-controls">
+                            <button class="icon-btn play-btn" aria-label="Play By Kentucky Waters">
+                                <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress-container"><div class="progress-bar"></div></div>
+                            <span class="time-display">0:00</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="../mp3/By Kentucky Waters.mp3" download class="icon-btn download-btn" title="Download Hymn MP3" aria-label="Download Hymn MP3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="song-player-section prayer-player-section">
+                    <div class="player-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M17.73 12.02l3.98-3.98a.996.996 0 000-1.41l-4.34-4.34a.996.996 0 00-1.41 0l-3.98 3.98L8 2.29a1.001 1.001 0 00-1.41 0L2.25 6.63a.996.996 0 000 1.41l3.98 3.98L2.25 16a.996.996 0 000 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.39.39 1.02.39 1.41 0l4.34-4.34a.996.996 0 000-1.41l-3.98-3.98z"/></svg>
+                        <span>The Prayer</span>
+                    </div>
+                    <div class="custom-audio-player">
+                        <audio data-song-title="Prayer - By Kentucky Waters" src="../mp3/prayer-placeholder.mp3" preload="none"></audio>
+                        <div class="player-controls">
+                            <button class="icon-btn play-btn" aria-label="Play Prayer">
+                                <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="progress-container"><div class="progress-bar"></div></div>
+                            <span class="time-display">0:00</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="../mp3/prayer-placeholder.mp3" download class="icon-btn download-btn" title="Download Prayer MP3" aria-label="Download Prayer MP3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Tabbed Lyrics / Prayer Text -->
+            <div class="song-lyrics-column">
+                <div class="content-tabs">
+                    <button class="content-tab active" data-tab="lyrics">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        Lyrics
+                    </button>
+                    <button class="content-tab" data-tab="prayer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.73 12.02l3.98-3.98a.996.996 0 000-1.41l-4.34-4.34a.996.996 0 00-1.41 0l-3.98 3.98L8 2.29a1.001 1.001 0 00-1.41 0L2.25 6.63a.996.996 0 000 1.41l3.98 3.98L2.25 16a.996.996 0 000 1.41l4.34 4.34c.39.39 1.02.39 1.41 0l3.98-3.98 3.98 3.98c.39.39 1.02.39 1.41 0l4.34-4.34a.996.996 0 000-1.41l-3.98-3.98z"/></svg>
+                        Prayer
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="tab-lyrics">
+                    <div class="song-lyrics-section">
+                        <div class="song-lyrics-body">
+                            <p><strong>Verse 1</strong>
+                By these Kentucky waters,<br>
+                The men in blue once stood,<br>
+                And some had walked through bondage,<br>
+                And some through field and wood.<br>
+                They came from every quarter,<br>
+                They came from far and near,<br>
+                But all were bound by one thing:<br>
+                The promise ringing clear.</p>
+                <p><strong>Chorus</strong>
+                By Kentucky waters,<br>
+                They were washed and made new,<br>
+                Free and bound and broken,<br>
+                In the gray and in the blue.<br>
+                By Kentucky waters,<br>
+                Where the old camp met the field,<br>
+                Something more than armies,<br>
+                Was broken and was healed.</p>
+                <p><strong>Verse 2</strong>
+                The preachers prayed at Nelson,<br>
+                The chaplains read the Word,<br>
+                And even in the darkness,<br>
+                A soldier's prayer was heard.<br>
+                By the creekside near the camp ground,<br>
+                Beneath the sycamore's shade,<br>
+                Men knelt before their Maker,<br>
+                Unafraid yet still afraid.</p>
+                <p><strong>Verse 3</strong>
+                Now we come to these same waters,<br>
+                Now we stand on this same shore,<br>
+                And we feel the weight of history,<br>
+                Pressing down from days of yore.<br>
+                Lord, remind us of our calling,<br>
+                As You called those men to give,<br>
+                May we serve our brother freely,<br>
+                May we help our neighbor live.</p>
+                <p><strong>Bridge</strong>
+                Let the river keep on running,<br>
+                Let the story keep its flow,<br>
+                Let the water tell the story,<br>
+                Of the seeds that brave men sow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-prayer">
+                    <div class="song-prayer-section">
+                        <h4 class="prayer-title">Prayer</h4>
+                        <div class="prayer-body">
+                            <p class="prayer-closing">Prayer coming soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="song-nav animate-on-scroll">
+            <a href="song-11.html" class="prev">
+                <span class="song-nav-label">Previous Hymn</span>
+                <span class="song-nav-title">Lay Down the Sword</span>
+            </a>
+            <a href="../songs.html" class="song-nav-all">All Hymns</a>
+            <a href="song-13.html" class="next">
+                <span class="song-nav-label">Next Hymn</span>
+                <span class="song-nav-title">The Soldier's Cross</span>
+            </a>
+        </nav>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+            <p class="footer-quote">&ldquo;We will not let their memory fade.&rdquo;</p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#dedication">Dedication</a>
+                <a href="../songs.html">The Hymns</a>
+                <a href="../tribute.html">Director's Tribute</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=3"></script>
+</body>
+</html>
