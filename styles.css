@@ -1124,6 +1124,110 @@ button { font-family: inherit; cursor: pointer; }
    FOOTER
    ========================================================================== */
 
+/* ==========================================================================
+   GIFT NOTICE SECTION
+   ========================================================================== */
+
+.gift-notice-section {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 0;
+    background: var(--bg-section);
+}
+.gift-notice-narrow {
+    max-width: 780px;
+    margin: 0 auto;
+}
+.gift-notice {
+    text-align: center;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+    position: relative;
+}
+.gift-notice::before,
+.gift-notice::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--accent-gold);
+    opacity: 0.4;
+}
+.gift-notice::before { top: 0; }
+.gift-notice::after { bottom: 0; }
+.gift-notice-icon {
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+.gift-notice-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+.gift-notice-body {
+    text-align: left;
+}
+.gift-notice-body p {
+    font-family: var(--font-accent);
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+}
+.gift-notice-body p strong {
+    color: var(--text-primary);
+}
+.gift-notice-closing {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+}
+.gift-notice-disclaimer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+.gift-notice-disclaimer p {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.5rem;
+}
+.gift-notice-email,
+.gift-notice-disclaimer a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+.gift-notice-email:hover,
+.gift-notice-disclaimer a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+.footer-disclaimer a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+.footer-disclaimer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
 .site-footer {
     position: relative;
     z-index: 1;
@@ -1165,6 +1269,13 @@ button { font-family: inherit; cursor: pointer; }
     transition: color 0.3s ease;
 }
 .footer-links a:hover { color: var(--accent-gold); }
+.footer-disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
 
 /* ==========================================================================
    RESPONSIVE
