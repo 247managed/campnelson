@@ -415,3 +415,95 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+/* ---------- PDF Prayer Modal ---------- */
+(function() {
+    const openBtn = document.getElementById('open-prayers-pdf');
+    const overlay = document.getElementById('pdf-modal-overlay');
+    const closeBtn = document.getElementById('close-pdf-modal');
+    const printBtn = document.getElementById('print-prayers-pdf');
+    const iframe = document.getElementById('pdf-iframe');
+
+    if (!openBtn || !overlay) return;
+
+    function openModal() {
+        iframe.src = 'downloads/Prayers_for_the_Faithful.pdf';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(function() {
+            iframe.src = '';
+        }, 350);
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    if (printBtn) {
+        printBtn.addEventListener('click', function() {
+            if (iframe.contentWindow) {
+                iframe.contentWindow.print();
+            }
+        });
+    }
+})();
+
+/* ---------- Lyrics PDF Modal (Tribute page) ---------- */
+(function() {
+    var openBtn = document.getElementById('open-lyrics-pdf');
+    var overlay = document.getElementById('lyrics-pdf-modal-overlay');
+    var closeBtn = document.getElementById('close-lyrics-pdf-modal');
+    var printBtn = document.getElementById('print-lyrics-pdf');
+    var iframe = document.getElementById('lyrics-pdf-iframe');
+
+    if (!openBtn || !overlay) return;
+
+    function openModal() {
+        iframe.src = 'downloads/Michaels Song - Keeper of Their Names - Lyrics.pdf';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(function() {
+            iframe.src = '';
+        }, 350);
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    if (printBtn) {
+        printBtn.addEventListener('click', function() {
+            if (iframe.contentWindow) {
+                iframe.contentWindow.print();
+            }
+        });
+    }
+})();

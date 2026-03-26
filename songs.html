@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Hymns | Camp Nelson National Cemetery</title>
+    <title>The Hymns | Songs of the Faithful Servant — Camp Nelson National Cemetery</title>
+    <meta name="description" content="Listen to all 15 original hymns from Songs of the Faithful Servant, written in honor of the veterans at Camp Nelson National Cemetery. Stream or download each hymn and its companion prayer.">
+    <meta name="keywords" content="Camp Nelson hymns, memorial hymns, veterans songs, Camp Nelson National Cemetery music, faithful servant hymnal, military memorial songs, prayers for veterans">
+    <meta name="author" content="Songs of the Faithful Servant">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://campnelsonhymns.com/songs.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="music.album">
+    <meta property="og:url" content="https://campnelsonhymns.com/songs.html">
+    <meta property="og:title" content="The Hymns | Songs of the Faithful Servant">
+    <meta property="og:description" content="15 original hymns honoring the veterans at Camp Nelson National Cemetery. Listen, download, and remember.">
+    <meta property="og:image" content="https://campnelsonhymns.com/images/IMG_0426.jpeg">
+    <meta property="og:site_name" content="Camp Nelson Hymns">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Hymns | Songs of the Faithful Servant">
+    <meta name="twitter:description" content="15 original hymns honoring the veterans at Camp Nelson National Cemetery. Listen, download, and remember.">
+    <meta name="twitter:image" content="https://campnelsonhymns.com/images/IMG_0426.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9734;</text></svg>">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 </head>
@@ -37,7 +61,7 @@
             <div class="page-header animate-on-scroll">
                 <span class="section-label">The Collection</span>
                 <h2>The Hymnal</h2>
-                <p class="section-description">15 original compositions written in honor of the men and women interred at Camp Nelson.</p>
+                <p class="section-description">15 original compositions written in honor of the men and women interred at Camp Nelson National Cemetery.</p>
             </div>
 
             <div class="hymn-list-grid">
@@ -117,8 +141,50 @@
                     <span class="hymn-style">Closing Anthem</span>
                 </a>
             </div>
+
+            <!-- Prayers Download Section -->
+            <div class="prayers-download-section animate-on-scroll">
+                <div class="prayers-download-card">
+                    <div class="prayers-download-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="prayers-download-title">Prayers for the Faithful</h3>
+                    <p class="prayers-download-desc">A companion collection of 15 original prayers &mdash; one for each hymn &mdash; written for the men and women who rest at Camp Nelson National Cemetery.</p>
+                    <button class="prayers-download-btn" id="open-prayers-pdf" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/></svg>
+                        <span>View &amp; Download the Prayers</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal-overlay" id="pdf-modal-overlay">
+        <div class="pdf-modal">
+            <div class="pdf-modal-header">
+                <h3 class="pdf-modal-title">Prayers for the Faithful</h3>
+                <div class="pdf-modal-actions">
+                    <a href="downloads/Prayers_for_the_Faithful.pdf" download class="pdf-action-btn" title="Download PDF">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Download</span>
+                    </a>
+                    <button class="pdf-action-btn" id="print-prayers-pdf" title="Print PDF" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                        <span>Print</span>
+                    </button>
+                    <button class="pdf-modal-close" id="close-pdf-modal" title="Close" type="button">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdf-iframe" src="" title="Prayers for the Faithful PDF"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">

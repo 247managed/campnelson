@@ -179,7 +179,7 @@ button { font-family: inherit; cursor: pointer; }
 .hero-bg-image {
     position: absolute;
     inset: 0;
-    background: url('CampNelson/IMG_0427.jpeg') center center / cover no-repeat;
+    background: url('images/IMG_0427.jpeg') center center / cover no-repeat;
     opacity: 0.15;
     filter: grayscale(30%);
     z-index: 0;
@@ -453,7 +453,7 @@ button { font-family: inherit; cursor: pointer; }
 .songs-page-bg {
     position: fixed;
     inset: 0;
-    background: url('CampNelson/IMG_0249.jpeg') center center / cover no-repeat;
+    background: url('images/IMG_0249.jpeg') center center / cover no-repeat;
     opacity: 0.2;
     filter: grayscale(30%);
     z-index: 0;
@@ -760,7 +760,7 @@ button { font-family: inherit; cursor: pointer; }
 .tribute-page-bg {
     position: fixed;
     inset: 0;
-    background: url('CampNelson/IMG_0254.jpeg') center center / cover no-repeat;
+    background: url('images/IMG_0254.jpeg') center center / cover no-repeat;
     opacity: 0.2;
     filter: grayscale(30%);
     z-index: 0;
@@ -858,7 +858,8 @@ button { font-family: inherit; cursor: pointer; }
 .tribute-portrait-section {
     position: relative;
     z-index: 1;
-    padding: 2rem 0 4rem;
+    padding: 0 0 4rem;
+    margin-top: -3rem;
 }
 .tribute-portrait-frame {
     max-width: 350px;
@@ -1042,6 +1043,72 @@ button { font-family: inherit; cursor: pointer; }
     position: relative;
     z-index: 1;
     padding: 0 0 6rem;
+}
+
+/* Tribute Song Card */
+.tribute-song-section {
+    position: relative;
+    z-index: 1;
+    padding: 0 0 3rem;
+}
+.tribute-song-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(197, 163, 85, 0.2);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+}
+.tribute-song-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    opacity: 0.7;
+    margin-bottom: 0.75rem;
+}
+.tribute-song-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+.tribute-song-card .song-player-section {
+    border: none;
+    padding: 0;
+    background: none;
+}
+.lyrics-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(197, 163, 85, 0.3);
+    transition: all 0.3s ease;
+}
+.lyrics-download-btn:hover {
+    background: rgba(197, 163, 85, 0.1);
+    border-color: var(--accent-gold);
+}
+.tribute-song-card .card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 /* Tribute floating stars */
@@ -1565,4 +1632,221 @@ button { font-family: inherit; cursor: pointer; }
     .photo-gallery { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
     .song-nav { flex-wrap: wrap; }
     .song-nav a { max-width: 100%; }
+}
+
+/* ---------- Prayers Download Section ---------- */
+.prayers-download-section {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.prayers-download-card {
+    text-align: center;
+    background: linear-gradient(135deg, var(--surface-card), var(--surface-dark));
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.prayers-download-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.prayers-download-icon {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.prayers-download-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.prayers-download-desc {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.prayers-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, var(--accent-gold), #b8963e);
+    color: var(--bg-deep);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+    text-transform: uppercase;
+}
+
+.prayers-download-btn:hover {
+    background: linear-gradient(135deg, var(--accent-gold-hover), var(--accent-gold));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(197, 163, 85, 0.3);
+}
+
+/* ---------- PDF Modal ---------- */
+.pdf-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s var(--ease-out), visibility 0.35s;
+}
+
+.pdf-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pdf-modal {
+    width: 100%;
+    max-width: 900px;
+    height: 90vh;
+    background: var(--surface-dark);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.35s var(--ease-out);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+.pdf-modal-overlay.active .pdf-modal {
+    transform: scale(1) translateY(0);
+}
+
+.pdf-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--surface-card);
+    flex-shrink: 0;
+}
+
+.pdf-modal-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.04em;
+}
+
+.pdf-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pdf-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: rgba(197, 163, 85, 0.12);
+    color: var(--accent-gold);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border: 1px solid rgba(197, 163, 85, 0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+    text-decoration: none;
+}
+
+.pdf-action-btn:hover {
+    background: rgba(197, 163, 85, 0.25);
+    border-color: rgba(197, 163, 85, 0.4);
+}
+
+.pdf-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+    margin-left: 0.25rem;
+}
+
+.pdf-modal-close:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-primary);
+}
+
+.pdf-modal-body {
+    flex: 1;
+    overflow: hidden;
+}
+
+.pdf-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+}
+
+@media (max-width: 640px) {
+    .pdf-modal {
+        height: 95vh;
+        border-radius: 12px;
+    }
+    .pdf-modal-header {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    .pdf-modal-title {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .pdf-action-btn span {
+        display: none;
+    }
+    .prayers-download-card {
+        padding: 2rem 1.5rem;
+    }
+    .prayers-download-title {
+        font-size: 1.3rem;
+    }
 }

@@ -1,0 +1,6 @@
+# robots.txt for campnelsonhymns.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://campnelsonhymns.com/sitemap.xml

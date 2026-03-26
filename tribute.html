@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Director's Tribute | Camp Nelson National Cemetery</title>
+    <title>Director's Tribute | Songs of the Faithful Servant — Camp Nelson National Cemetery</title>
+    <meta name="description" content="A personal tribute to Michael, Director of Camp Nelson National Cemetery — the faithful servant who ensures every veteran's legacy is honored with dignity and care.">
+    <meta name="keywords" content="Camp Nelson National Cemetery director, Michael tribute, cemetery director tribute, faithful servant, Nicholasville Kentucky, veterans memorial">
+    <meta name="author" content="Songs of the Faithful Servant">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://campnelsonhymns.com/tribute.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://campnelsonhymns.com/tribute.html">
+    <meta property="og:title" content="Director's Tribute | Songs of the Faithful Servant">
+    <meta property="og:description" content="A personal tribute to Michael, Director of Camp Nelson National Cemetery — the faithful servant who ensures every veteran's legacy is honored.">
+    <meta property="og:image" content="https://campnelsonhymns.com/images/Michael's  Song.png">
+    <meta property="og:site_name" content="Camp Nelson Hymns">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Director's Tribute | Songs of the Faithful Servant">
+    <meta name="twitter:description" content="A personal tribute to Michael, Director of Camp Nelson National Cemetery — the faithful servant who ensures every veteran's legacy is honored.">
+    <meta name="twitter:image" content="https://campnelsonhymns.com/images/Michael's  Song.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9734;</text></svg>">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 </head>
@@ -74,13 +98,48 @@
                 <div class="tribute-portrait-frame animate-on-scroll">
                     <div class="portrait-border-glow" aria-hidden="true"></div>
                     <div class="portrait-wrapper">
-                        <img src="images/director-michael.jpg" alt="Portrait of Director Michael, Camp Nelson National Cemetery" class="tribute-portrait" loading="lazy">
+                        <img src="images/Michael's  Song.png" alt="Portrait of Director Michael, Camp Nelson National Cemetery" class="tribute-portrait" loading="lazy">
                         <div class="portrait-overlay" aria-hidden="true"></div>
                     </div>
                     <div class="portrait-caption">
                         <span class="caption-star">&#9734;</span>
                         <span>The Faithful Servant</span>
                         <span class="caption-star">&#9734;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Michael's Song Player -->
+        <section class="tribute-song-section">
+            <div class="container tribute-narrow">
+                <div class="tribute-song-card animate-on-scroll">
+                    <div class="tribute-song-header">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        <span>Michael's Song</span>
+                    </div>
+                    <h3 class="tribute-song-title">Keeper of Their Names</h3>
+                    <div class="song-player-section">
+                        <div class="custom-audio-player">
+                            <audio data-song-title="Michael's Song - Keeper of Their Names" src="mp3/Michael’s Song - Keeper of Their Names.mp3" preload="none"></audio>
+                            <div class="player-controls">
+                                <button class="icon-btn play-btn" aria-label="Play Keeper of Their Names">
+                                    <svg class="play-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                    <svg class="pause-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                </button>
+                                <div class="progress-container"><div class="progress-bar"></div></div>
+                                <span class="time-display">0:00</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="mp3/Michael’s Song - Keeper of Their Names.mp3" download class="icon-btn download-btn" title="Download Song" aria-label="Download Song MP3">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                </a>
+                                <button class="text-btn lyrics-download-btn" id="open-lyrics-pdf" title="View Lyrics PDF" type="button">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/></svg>
+                                    Lyrics PDF
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,17 +182,17 @@
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                         </div>
                         <h3>Keeper of Legacy</h3>
-                        <p>Through your devotion, the stories of those who rest at Camp Nelson will never be forgotten. You are the living bridge between their sacrifice and our memory.</p>
+                        <p>Through your devotion, the stories of those who rest at Camp Nelson National Cemetery will never be forgotten. You are the living bridge between their sacrifice and our memory.</p>
                     </div>
                 </div>
 
                 <div class="tribute-letter-continued animate-on-scroll">
                     <div class="letter-body">
-                        <p>The grounds of Camp Nelson are more than a cemetery under your care &mdash; they are a sanctuary. You have made this hallowed earth a place where history breathes, where sacrifice is felt in the stillness of the morning air, and where every visitor leaves changed.</p>
+                        <p>The grounds of Camp Nelson National Cemetery are more than a cemetery under your care &mdash; they are a sanctuary. You have made this hallowed earth a place where history breathes, where sacrifice is felt in the stillness of the morning air, and where every visitor leaves changed.</p>
 
                         <p>You carry a weight that most people will never understand: the weight of being the last person to ensure that a veteran's final resting place reflects the honor of their service. And you carry it not with burden, but with purpose. Not with weariness, but with love.</p>
 
-                        <p>These hymns were written because of places like Camp Nelson and people like you. Your dedication inspired the words. Your faithfulness gave them meaning. Your service to the fallen is itself a kind of hymn &mdash; sung not with music, but with action, every single day.</p>
+                        <p>These hymns were written because of places like Camp Nelson National Cemetery and people like you. Your dedication inspired the words. Your faithfulness gave them meaning. Your service to the fallen is itself a kind of hymn &mdash; sung not with music, but with action, every single day.</p>
                     </div>
                 </div>
 
@@ -144,9 +203,9 @@
 
                 <div class="tribute-letter-closing animate-on-scroll">
                     <div class="letter-body">
-                        <p>Michael, this hymnal is dedicated to the veterans of Camp Nelson, but it is also dedicated to you &mdash; because without people like you, the memory of their service would fade into silence. You are the reason the silence speaks.</p>
+                        <p>Michael, this hymnal is dedicated to the veterans of Camp Nelson National Cemetery, but it is also dedicated to you &mdash; because without people like you, the memory of their service would fade into silence. You are the reason the silence speaks.</p>
 
-                        <p>Thank you for your service to those who served. Thank you for your faithfulness. Thank you for being the faithful servant that Camp Nelson &mdash; and this nation &mdash; so deeply needs.</p>
+                        <p>Thank you for your service to those who served. Thank you for your faithfulness. Thank you for being the faithful servant that Camp Nelson National Cemetery &mdash; and this nation &mdash; so deeply needs.</p>
 
                         <p class="letter-close">With deepest respect and gratitude,</p>
                         <p class="letter-signature">The Author of These Hymns</p>
@@ -183,6 +242,31 @@
 
     </main>
 
+    <!-- Lyrics PDF Modal -->
+    <div class="pdf-modal-overlay" id="lyrics-pdf-modal-overlay">
+        <div class="pdf-modal">
+            <div class="pdf-modal-header">
+                <h3 class="pdf-modal-title">Michael's Song — Keeper of Their Names</h3>
+                <div class="pdf-modal-actions">
+                    <a href="downloads/Michaels Song - Keeper of Their Names - Lyrics.pdf" download class="pdf-action-btn" title="Download PDF">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Download</span>
+                    </a>
+                    <button class="pdf-action-btn" id="print-lyrics-pdf" title="Print PDF" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                        <span>Print</span>
+                    </button>
+                    <button class="pdf-modal-close" id="close-lyrics-pdf-modal" title="Close" type="button">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="lyrics-pdf-iframe" src="" title="Keeper of Their Names Lyrics PDF"></iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -198,6 +282,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
