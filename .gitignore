@@ -12,3 +12,10 @@ desktop.ini
 
 # Source photos (not needed for deployment)
 CampNelson/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
